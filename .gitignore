@@ -1,0 +1,12 @@
+*.exe
+*.dll
+*.pdb
+*.log
+*.zip
+*.user
+.env
+.env.*
+.vs/
+bin/
+obj/
+LibreHardwareMonitor/

@@ -1,0 +1,210 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="LeFiM LCD Control"
+        Width="1180" Height="850" MinWidth="790" MinHeight="580"
+        WindowStartupLocation="CenterScreen" Background="#0D111A" Foreground="#EFF4FD" FontFamily="Segoe UI">
+  <Window.Resources>
+    <Style TargetType="TextBlock"><Setter Property="TextWrapping" Value="Wrap"/></Style>
+    <Style TargetType="TabControl">
+      <Setter Property="Foreground" Value="#EFF4FD"/>
+      <Setter Property="Background" Value="#141D2B"/>
+      <Setter Property="BorderBrush" Value="#2E4059"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="TabControl">
+            <DockPanel KeyboardNavigation.TabNavigation="Local">
+              <TabPanel DockPanel.Dock="Top" IsItemsHost="True" Margin="0,0,0,4"/>
+              <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                      BorderThickness="1" CornerRadius="10">
+                <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"
+                                  TextElement.Foreground="{TemplateBinding Foreground}"/>
+              </Border>
+            </DockPanel>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style TargetType="TabItem">
+      <Setter Property="Foreground" Value="#EFF4FD"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="TabItem">
+            <Border x:Name="TabShape" Background="#212D40" BorderBrush="#2E4059"
+                    BorderThickness="1" CornerRadius="8" Margin="0,0,5,0" Padding="12,8">
+              <ContentPresenter ContentSource="Header" RecognizesAccessKey="True"
+                                TextElement.Foreground="{TemplateBinding Foreground}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="TabShape" Property="Background" Value="#2A3950"/></Trigger>
+              <Trigger Property="IsSelected" Value="True">
+                <Setter TargetName="TabShape" Property="Background" Value="#183838"/>
+                <Setter TargetName="TabShape" Property="BorderBrush" Value="#63E5CF"/>
+                <Setter Property="Foreground" Value="#8DF2E3"/>
+              </Trigger>
+              <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="TabShape" Property="BorderBrush" Value="#8DF2E3"/></Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style TargetType="Button">
+      <Setter Property="Background" Value="#212D40"/>
+      <Setter Property="Foreground" Value="#E9F2FC"/>
+      <Setter Property="BorderBrush" Value="#2E4059"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="Padding" Value="12,9"/>
+      <Setter Property="FontSize" Value="13"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border x:Name="Shape" CornerRadius="9" Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                    Padding="{TemplateBinding Padding}">
+              <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Shape" Property="Opacity" Value="0.83"/></Trigger>
+              <Trigger Property="IsPressed" Value="True"><Setter TargetName="Shape" Property="Opacity" Value="0.65"/></Trigger>
+              <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Shape" Property="BorderBrush" Value="#64E4D1"/></Trigger>
+              <Trigger Property="IsEnabled" Value="False"><Setter TargetName="Shape" Property="Opacity" Value="0.44"/></Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </Window.Resources>
+  <DockPanel>
+    <Menu DockPanel.Dock="Top" Background="#DCE7EF" Padding="12,3">
+      <MenuItem Header="_Arquivo">
+        <MenuItem x:Name="MenuImport" Header="Importar imagem ou GIF"/>
+        <MenuItem x:Name="MenuExport" Header="Exportar em 480 × 480"/>
+        <Separator/>
+        <MenuItem x:Name="MenuHide" Header="Ocultar na bandeja"/>
+        <MenuItem x:Name="MenuExit" Header="Sair"/>
+      </MenuItem>
+      <MenuItem Header="_Opções">
+        <MenuItem x:Name="SaveConfig" Header="Salvar configuração atual"/>
+        <MenuItem x:Name="Startup" Header="Iniciar com o Windows e reproduzir" IsCheckable="True"/>
+        <Separator/><MenuItem x:Name="Shortcut" Header="Criar atalho na área de trabalho"/>
+      </MenuItem>
+      <MenuItem Header="_Idioma">
+        <MenuItem x:Name="LanguagePt" Header="Português (Brasil)" IsCheckable="True" IsChecked="True"/>
+        <MenuItem x:Name="LanguageEn" Header="English" IsCheckable="True"/>
+      </MenuItem>
+      <MenuItem Header="_Ajuda"><MenuItem x:Name="MenuProbe" Header="Diagnóstico USB"/><MenuItem x:Name="MenuAbout" Header="Sobre o LeFiM LCD Control"/></MenuItem>
+    </Menu>
+  <Grid Margin="30,18">
+    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="16"/><RowDefinition/></Grid.RowDefinitions>
+    <Grid>
+      <StackPanel Orientation="Horizontal">
+        <Border Width="45" Height="45" CornerRadius="12" Background="#153B3C" VerticalAlignment="Center">
+          <Image x:Name="HeaderLogo" Width="45" Height="45" Stretch="UniformToFill">
+            <Image.Clip><RectangleGeometry Rect="0,0,45,45" RadiusX="12" RadiusY="12"/></Image.Clip>
+          </Image>
+        </Border>
+        <StackPanel Margin="13,0,0,0">
+          <TextBlock Text="LeFiM LCD Control" FontSize="25" FontWeight="SemiBold"/>
+          <TextBlock Text="Personalização do LCD" Foreground="#A0AEC4" FontSize="13"/>
+        </StackPanel>
+      </StackPanel>
+      <Border HorizontalAlignment="Right" VerticalAlignment="Center" Padding="11,7" CornerRadius="13" Background="#1B2636">
+        <TextBlock x:Name="UsbStatus" Text="2A55:9990  ·  WinUSB" Foreground="#B5C7DA" FontSize="12"/>
+      </Border>
+    </Grid>
+    <Grid Grid.Row="2">
+      <Grid.ColumnDefinitions><ColumnDefinition Width="1.45*"/><ColumnDefinition Width="18"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+      <Border Grid.Column="0" Background="#141D2B" CornerRadius="16" Padding="19" BorderThickness="1" BorderBrush="#25324A">
+        <Grid>
+          <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+          <DockPanel>
+            <TextBlock DockPanel.Dock="Right" Text="480 × 480" Foreground="#6EE7D5" FontSize="13" VerticalAlignment="Center" FontFamily="Consolas"/>
+            <TextBlock Text="Prévia do LCD" FontSize="18" FontWeight="SemiBold"/>
+          </DockPanel>
+          <Viewbox Grid.Row="1" Margin="0,13">
+            <Border x:Name="Drop" Width="480" Height="480" Background="#080C14" BorderThickness="2" BorderBrush="#364764" AllowDrop="True">
+              <Grid ClipToBounds="True" x:Name="PreviewCanvas">
+                <Image x:Name="Preview" Stretch="Fill"/>
+                <Canvas x:Name="SensorLayer"/>
+                <Ellipse x:Name="CropRing" Stroke="#A8CBD2" StrokeThickness="1.5" IsHitTestVisible="False" Visibility="Collapsed"/>
+              </Grid>
+            </Border>
+          </Viewbox>
+          <DockPanel Grid.Row="2" LastChildFill="True">
+            <Button x:Name="Play" DockPanel.Dock="Right" Margin="8,0,0,0" Content="Pausar" IsEnabled="False"/>
+            <TextBlock x:Name="MediaInfo" VerticalAlignment="Center" Foreground="#A0AEC4"/>
+          </DockPanel>
+        </Grid>
+      </Border>
+      <Grid Grid.Column="2" x:Name="ControlPanel">
+        <Viewbox Stretch="Uniform" StretchDirection="DownOnly" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <StackPanel Width="{Binding ActualWidth, ElementName=ControlPanel}">
+          <TabControl Background="#141D2B" BorderBrush="#25324A" Padding="0">
+            <TabItem Header="Imagens e GIFs"><StackPanel>
+          <Border Background="#141D2B" BorderBrush="#25324A" BorderThickness="1" CornerRadius="16" Padding="16">
+            <StackPanel>
+              <TextBlock Text="Enquadramento" FontSize="18" FontWeight="SemiBold"/>
+              <Button x:Name="Import" Margin="0,10,0,9" Background="#63E5CF" Foreground="#092625" BorderBrush="#63E5CF" FontWeight="SemiBold" Content="Importar imagem ou GIF"/>
+              <TextBlock Text="Arraste a mídia na prévia para enquadrar." Foreground="#A0AEC4" FontSize="12"/>
+              <DockPanel Margin="0,7,0,0"><TextBlock Text="Zoom" VerticalAlignment="Center"/><TextBlock x:Name="ZoomValue" DockPanel.Dock="Right" Text="100%" Width="44"/><Slider x:Name="Zoom" Minimum="1" Maximum="4" Value="1" Margin="8,0"/></DockPanel>
+              <UniformGrid Columns="2" Margin="0,12,0,0">
+                <Button x:Name="Fill" Content="Preencher" Margin="0,0,4,0"/>
+                <Button x:Name="Fit" Content="Encaixar" Margin="4,0,0,0"/>
+              </UniformGrid>
+              <UniformGrid Columns="2" Margin="0,8,0,0">
+                <StackPanel Margin="0,0,4,0">
+                <StackPanel x:Name="AngleControls" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                  <Button x:Name="AngleMinus" Content="−" Width="34" Height="34" Padding="0" FontSize="18"
+                          AutomationProperties.Name="Diminuir rotação em um grau"/>
+                  <Grid x:Name="AngleDial" Width="64" Height="64" Margin="4,0" Background="Transparent" Focusable="True" Cursor="Hand"
+                        AutomationProperties.Name="Rotação em graus" ToolTip="Arraste para girar. Use a rodinha ou as setas para ajustar 1°.">
+                    <Ellipse Margin="2" Fill="#212D40" Stroke="#64E4D1" StrokeThickness="2"/>
+                    <Grid RenderTransformOrigin="0.5,0.5"><Grid.RenderTransform><RotateTransform x:Name="AnglePointer"/></Grid.RenderTransform>
+                      <Border Background="#64E4D1" Width="4" Height="13" VerticalAlignment="Top" Margin="0,8,0,0" CornerRadius="2"/>
+                    </Grid>
+                  </Grid>
+                  <Button x:Name="AnglePlus" Content="+" Width="34" Height="34" Padding="0" FontSize="18"
+                          AutomationProperties.Name="Aumentar rotação em um grau"/>
+                </StackPanel>
+                <TextBlock x:Name="AngleText" Text="0°" Foreground="#64E4D1" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <Button x:Name="Mask" Content="Prévia circular" Margin="4,0,0,0" VerticalAlignment="Center"/>
+              </UniformGrid>
+            </StackPanel>
+          </Border>
+          <Border Margin="0,11,0,0" Background="#141D2B" BorderBrush="#25324A" BorderThickness="1" CornerRadius="16" Padding="16">
+            <StackPanel>
+              <TextBlock Text="Temas" FontSize="18" FontWeight="SemiBold"/>
+              <UniformGrid x:Name="Themes" Columns="3" Margin="0,10,0,0"/>
+            </StackPanel>
+          </Border>
+            </StackPanel></TabItem>
+            <TabItem Header="Informações">
+              <ScrollViewer MaxHeight="398" VerticalScrollBarVisibility="Auto">
+              <StackPanel Margin="15">
+                <TextBlock Text="Telemetria" FontWeight="SemiBold" FontSize="18"/>
+                <TextBlock Text="Arraste para posicionar. Use a rodinha para redimensionar." Foreground="#A0AEC4" Margin="0,7,0,12"/>
+                <StackPanel x:Name="SensorRows"/>
+                <TextBlock x:Name="SensorStatus" Foreground="#A0AEC4" Margin="0,10,0,0"/>
+              </StackPanel>
+              </ScrollViewer>
+            </TabItem>
+          </TabControl>
+          <Border Margin="0,11,0,0" Background="#141D2B" BorderBrush="#25324A" BorderThickness="1" CornerRadius="16" Padding="16">
+            <StackPanel>
+              <TextBlock Text="Saída do LCD" FontSize="18" FontWeight="SemiBold"/>
+              <Button x:Name="Export" Content="Exportar em 480 × 480" Margin="0,9,0,7"/>
+              <Button x:Name="Send" Content="Enviar ao LCD" Margin="0,0,0,7"/>
+              <Button x:Name="Probe" Content="Diagnóstico USB" />
+              <TextBlock x:Name="Feedback" Margin="0,9,0,0" Foreground="#A0AEC4" FontSize="12"
+                         Text="Pronto."/>
+            </StackPanel>
+          </Border>
+        </StackPanel>
+      </Viewbox>
+      </Grid>
+    </Grid>
+  </Grid>
+  </DockPanel>
+</Window>
