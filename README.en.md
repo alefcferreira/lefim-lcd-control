@@ -34,4 +34,4 @@ When reporting a problem, include the app version, Windows version, panel resolu
 
 If LeFiM LCD Control helped you, you can support its development with an optional contribution. Thanks for using the app!
 
-[Support on Ko-fi](https://ko-fi.com/alefcferreira)
+[Support on Ko-fi](https://ko-fi.com/alefcferreira) · [Support via Mercado Pago](https://link.mercadopago.com.br/lefimscripts)

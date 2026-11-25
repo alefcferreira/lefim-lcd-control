@@ -34,4 +34,4 @@ Ao abrir uma issue, inclua a versão do aplicativo, a versão do Windows, a reso
 
 Se o LeFiM LCD Control te ajudou, você pode apoiar seu desenvolvimento com uma contribuição voluntária. Obrigado por usar o programa!
 
-[Apoie pelo Ko-fi](https://ko-fi.com/alefcferreira)
+[Apoie pelo Ko-fi](https://ko-fi.com/alefcferreira) · [Apoie pelo Mercado Pago](https://link.mercadopago.com.br/lefimscripts)
