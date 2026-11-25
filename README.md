@@ -29,3 +29,9 @@ Em um Windows x64 com .NET Framework 4.8, abra o PowerShell na raiz do repositó
 O primeiro comando gera `LeFiM-LCD-Control.exe`. O segundo empacota esse executável em `LeFiM-LCD-Control-Setup.exe`. A compilação usa o compilador do .NET Framework do Windows.
 
 Ao abrir uma issue, inclua a versão do aplicativo, a versão do Windows, a resolução e o VID/PID do painel, os passos para reproduzir e a mensagem de **Diagnóstico USB**, quando houver.
+
+## Apoie o projeto
+
+Se o LeFiM LCD Control te ajudou, você pode apoiar seu desenvolvimento com uma contribuição voluntária. Obrigado por usar o programa!
+
+[Apoie pelo Ko-fi](https://ko-fi.com/alefcferreira)

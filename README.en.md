@@ -29,3 +29,9 @@ On x64 Windows with .NET Framework 4.8, open PowerShell in the repository root:
 The first command builds `LeFiM-LCD-Control.exe`. The second packages it as `LeFiM-LCD-Control-Setup.exe`. Both scripts use the Windows .NET Framework compiler.
 
 When reporting a problem, include the app version, Windows version, panel resolution and VID/PID, steps to reproduce, and the USB diagnostics message if available.
+
+## Support the project
+
+If LeFiM LCD Control helped you, you can support its development with an optional contribution. Thanks for using the app!
+
+[Support on Ko-fi](https://ko-fi.com/alefcferreira)
