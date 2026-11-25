@@ -4,6 +4,8 @@ Criei o LeFiM LCD Control para usar a telinha USB de 480 × 480 do meu PC com im
 
 [English](README.en.md) · [Downloads](https://github.com/alefcferreira/lefim-lcd-control/releases) · [Reportar um problema](https://github.com/alefcferreira/lefim-lcd-control/issues/new)
 
+![Demonstração do LeFiM LCD Control no Windows](docs/demo.gif)
+
 ## Compatibilidade
 
 - Windows 11 x64 com .NET Framework 4.8.

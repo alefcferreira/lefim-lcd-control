@@ -4,6 +4,8 @@ I built LeFiM LCD Control to show images, GIFs, and system readings on my PC’s
 
 [Português](README.md) · [Downloads](https://github.com/alefcferreira/lefim-lcd-control/releases) · [Report an issue](https://github.com/alefcferreira/lefim-lcd-control/issues/new)
 
+![LeFiM LCD Control demo on Windows](docs/demo.gif)
+
 ## Compatibility
 
 - Windows 11 x64 with .NET Framework 4.8.
