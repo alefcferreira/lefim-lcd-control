@@ -1,8 +1,8 @@
 # LeFiM LCD Control
 
-Aplicativo para Windows que exibe imagens, GIFs e informações do PC em um LCD USB circular de 480 × 480.
+Criei o LeFiM LCD Control para usar a telinha USB de 480 × 480 do meu PC com imagens, GIFs e informações do sistema. No Windows, você ajusta o enquadramento na prévia e envia o resultado para o LCD.
 
-[English](README.en.md) · [Downloads](../../releases) · [Reportar um problema](../../issues/new)
+[English](README.en.md) · [Downloads](https://github.com/alefcferreira/lefim-lcd-control/releases) · [Reportar um problema](https://github.com/alefcferreira/lefim-lcd-control/issues/new)
 
 ## Compatibilidade
 
@@ -12,7 +12,7 @@ Aplicativo para Windows que exibe imagens, GIFs e informações do PC em um LCD 
 
 ## Instalação e uso
 
-1. Em [Releases](../../releases), baixe o instalador ou o ZIP portátil. Para usar o ZIP, extraia-o e abra `LeFiM-LCD-Control.exe`.
+1. Em [Releases](https://github.com/alefcferreira/lefim-lcd-control/releases), baixe o instalador ou o ZIP portátil. Para usar o ZIP, extraia-o e abra `LeFiM-LCD-Control.exe`.
 2. Feche o software que estiver usando o LCD. Importe uma imagem ou GIF e ajuste zoom, posição e rotação na prévia.
 3. Clique em **Enviar ao LCD**. Mantenha o aplicativo aberto durante a reprodução. O botão de fechar a janela a oculta na bandeja.
 4. Para personalizar a sobreposição, abra **Informações** e selecione as leituras que quer exibir, como temperatura, uso de RAM ou relógio.

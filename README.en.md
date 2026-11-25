@@ -1,8 +1,8 @@
 # LeFiM LCD Control
 
-Windows app for showing images, GIFs, and PC readings on a circular 480 × 480 USB LCD.
+I built LeFiM LCD Control to show images, GIFs, and system readings on my PC’s 480 × 480 USB display. On Windows, you can adjust the framing in the preview and send the result to the LCD.
 
-[Português](README.md) · [Downloads](../../releases) · [Report an issue](../../issues/new)
+[Português](README.md) · [Downloads](https://github.com/alefcferreira/lefim-lcd-control/releases) · [Report an issue](https://github.com/alefcferreira/lefim-lcd-control/issues/new)
 
 ## Compatibility
 
@@ -12,7 +12,7 @@ Windows app for showing images, GIFs, and PC readings on a circular 480 × 480 U
 
 ## Install and use
 
-1. Download the setup executable or portable ZIP from [Releases](../../releases). To use the ZIP, extract it and run `LeFiM-LCD-Control.exe`.
+1. Download the setup executable or portable ZIP from [Releases](https://github.com/alefcferreira/lefim-lcd-control/releases). To use the ZIP, extract it and run `LeFiM-LCD-Control.exe`.
 2. Close any other software using the LCD. Import an image or GIF and adjust its zoom, position, and rotation in the preview.
 3. Select **Send to LCD**. Keep the app running during playback. Closing the window hides it in the system tray.
 4. Open the information tab to add an overlay with readings such as temperature, RAM usage, or the clock.
