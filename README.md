@@ -12,6 +12,8 @@ Criei o LeFiM LCD Control para usar a telinha USB de 480 × 480 do meu PC com im
 - Hardware testado: LCD USB de 480 × 480 com WinUSB, VID `2A55`, PID `9990`, revisão `0200`. Confirme também a resolução do painel, pois há variantes.
 - Os sensores disponíveis dependem do hardware e do driver. Para ampliar a leitura de sensores, extraia o [Libre Hardware Monitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/releases) em `Downloads\LibreHardwareMonitor`. O instalador oferece o download opcional do [PawnIO](https://pawnio.eu/).
 
+[Ver a telinha testada no AliExpress](https://s.click.aliexpress.com/e/_c4cb1ATn) · **Link de afiliado.** Posso receber comissão por compras elegíveis.
+
 ## Instalação e uso
 
 1. Em [Releases](https://github.com/alefcferreira/lefim-lcd-control/releases), baixe o instalador ou o ZIP portátil. Para usar o ZIP, extraia-o e abra `LeFiM-LCD-Control.exe`.
