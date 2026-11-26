@@ -177,6 +177,7 @@ internal static class Words
         { "Verificando LCD", "Checking LCD" },
         { "_Ajuda", "_Help" },
         { "_Arquivo", "_File" },
+        { "_Doações", "_Donate" },
         { "_Idioma", "_Language" },
         { "_Opções", "_Settings" },
         { "indisponível", "unavailable" },

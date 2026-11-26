@@ -93,6 +93,10 @@
         <MenuItem x:Name="LanguagePt" Header="Português (Brasil)" IsCheckable="True" IsChecked="True"/>
         <MenuItem x:Name="LanguageEn" Header="English" IsCheckable="True"/>
       </MenuItem>
+      <MenuItem Header="_Doações">
+        <MenuItem x:Name="DonateKoFi" Header="Ko-fi"/>
+        <MenuItem x:Name="DonateMercadoPago" Header="Mercado Pago"/>
+      </MenuItem>
       <MenuItem Header="_Ajuda"><MenuItem x:Name="MenuProbe" Header="Diagnóstico USB"/><MenuItem x:Name="MenuAbout" Header="Sobre o LeFiM LCD Control"/></MenuItem>
     </Menu>
   <Grid Margin="30,18">

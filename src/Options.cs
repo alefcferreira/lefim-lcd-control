@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
@@ -210,6 +211,8 @@ internal sealed partial class Editor
         };
         canvas.LostMouseCapture += (s,e) => { if (dragging) { dragging=false; ShowFrame(); } };
         Find<MenuItem>("SaveConfig").Click += (s,e) => SafeOption(() => { Save(); Status(Words.Get("Configuração salva.")); });
+        Find<MenuItem>("DonateKoFi").Click += (s, e) => OpenDonationPage("https://ko-fi.com/alefcferreira");
+        Find<MenuItem>("DonateMercadoPago").Click += (s, e) => OpenDonationPage("https://link.mercadopago.com.br/lefimscripts");
         var startup=Find<MenuItem>("Startup");
         try { using (var key=Registry.CurrentUser.OpenSubKey(RunKey))
             startup.IsChecked=key != null && key.GetValue(AppName) != null; } catch (System.Security.SecurityException) { startup.IsEnabled=false; }
@@ -247,6 +250,13 @@ internal sealed partial class Editor
         sensorStatus.Text = Words.InLanguage(sensorStatus.Text);
         Status(english ? "Ready." : "Pronto.");
         UpdateDetails();
+    }
+
+    void OpenDonationPage(string url)
+    {
+        SafeOption(() => {
+            using (Process.Start(new ProcessStartInfo(url) { UseShellExecute = true })) { }
+        });
     }
 
     void SafeOption(Action action) { try { action(); } catch(Exception ex) { Status(ex.Message); } }

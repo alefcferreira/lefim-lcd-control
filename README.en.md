@@ -12,7 +12,7 @@ I built LeFiM LCD Control to show images, GIFs, and system readings on my PC’s
 - Tested hardware: 480 × 480 USB LCD using WinUSB, VID `2A55`, PID `9990`, revision `0200`. Check your panel resolution too, as variants exist.
 - Sensor availability depends on hardware and drivers. For additional sensor readings, extract [Libre Hardware Monitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/releases) to `Downloads\LibreHardwareMonitor`. The setup offers an optional [PawnIO](https://pawnio.eu/) download.
 
-[View the tested display on AliExpress](https://s.click.aliexpress.com/e/_c4cb1ATn) · **Affiliate link.** I may earn a commission on qualifying purchases.
+[View the tested display on AliExpress](https://s.click.aliexpress.com/e/_c4cb1ATn) · **Ad (affiliate link)**
 
 ## Install and use
 
@@ -37,5 +37,7 @@ When reporting a problem, include the app version, Windows version, panel resolu
 ## Support the project
 
 If LeFiM LCD Control helped you, you can support its development with an optional contribution. Thanks for using the app!
+
+In the app, open **Donate** and choose how you’d like to contribute.
 
 [Support on Ko-fi](https://ko-fi.com/alefcferreira) · [Support via Mercado Pago](https://link.mercadopago.com.br/lefimscripts)

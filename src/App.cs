@@ -21,7 +21,7 @@ internal sealed partial class Editor
     int theme, rotation, current;
     bool fill = true, circular, busy, paused;
     CancellationTokenSource playback;
-    const string Version = "1.0.20";
+    const string Version = "1.0.21";
     const string InstanceName = @"Local\LeFiM.LCD.Control.";
     string lastUsbSend;
     StringBuilder activeUsbTrace;
